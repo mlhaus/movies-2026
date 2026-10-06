@@ -11,7 +11,7 @@ public interface MovieDAO<T> {
      * @param id The ID of the movie to find
      * @return The single movie object, or null if not found
      */
-    Movie findById(String id);
+    T findById(String id);
 
     /**
      * Retrieves all movies from the data source that match the title

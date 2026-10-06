@@ -27,7 +27,7 @@ public class XmlMovieDAO implements MovieDAO<MovieSearchResult> {
     }
 
     @Override
-    public Movie findById(String id) {
+    public MovieSearchResult findById(String id) {
         return null;
     }
 

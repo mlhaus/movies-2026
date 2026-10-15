@@ -28,8 +28,18 @@ public class MovieDAOFactory {
                     throw new IllegalArgumentException("XML API URL is not configured in application.properties");
                 }
                 return new XmlMovieDAO(apiURL);
+            case "JSON":
+                String jsonApiURL = props.getProperty("json.apiURL");
+                if(jsonApiURL == null || jsonApiURL.isEmpty()) {
+                    throw new IllegalArgumentException("json.apiURL is required");
+                }
+                String jsonReadAccessToken = props.getProperty("json.apiReadAccessToken");
+                if(jsonReadAccessToken == null || jsonReadAccessToken.isEmpty()) {
+                    throw new IllegalArgumentException("json.apiReadAccessToken");
+                }
+                return new JsonMovieDAO(jsonApiURL, jsonReadAccessToken);
 
-            // other cases for JSON, MYSQL, MongoDB, etc.
+            // other cases for MYSQL, MongoDB, etc.
 
             default:
                 throw new IllegalArgumentException("Invalid data source type specified: " + sourceType);

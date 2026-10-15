@@ -27,11 +27,6 @@ public class XmlMovieDAO implements MovieDAO<MovieSearchResult> {
     }
 
     @Override
-    public MovieSearchResult findById(String id) {
-        return null;
-    }
-
-    @Override
     public List<MovieSearchResult> search(String title) {
         if(url == null) {
             throw new IllegalArgumentException("XML API URL is not configured in application.properties");

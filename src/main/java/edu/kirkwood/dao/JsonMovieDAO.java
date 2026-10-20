@@ -9,6 +9,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class JsonMovieDAO implements MovieDAO<MovieSearchResult> {
@@ -30,7 +31,9 @@ public class JsonMovieDAO implements MovieDAO<MovieSearchResult> {
     public List<MovieSearchResult> search(String title) {
         String responseBody = fetchRawData(title);
         // prettyPrintResponse(responseBody);
-        Gson gson = new GsonBuilder().create();
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(LocalDate.class, new JsonTypeAdapter.LocalDateDeserializer())
+                .create();
         TmdbMovieResponse movieResponse = null;
         try {
             movieResponse = gson.fromJson(responseBody, TmdbMovieResponse.class);

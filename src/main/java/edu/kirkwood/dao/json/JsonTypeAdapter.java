@@ -1,4 +1,4 @@
-package edu.kirkwood.dao;
+package edu.kirkwood.dao.json;
 
 import com.google.gson.*;
 

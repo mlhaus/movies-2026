@@ -1,6 +1,7 @@
-package edu.kirkwood.dao;
+package edu.kirkwood.dao.json;
 
 import com.google.gson.*;
+import edu.kirkwood.dao.MovieDAO;
 import edu.kirkwood.model.json.MovieSearchResult;
 
 import edu.kirkwood.model.json.TmdbMovieResponse;

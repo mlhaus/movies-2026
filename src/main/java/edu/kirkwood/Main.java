@@ -1,6 +1,8 @@
 package edu.kirkwood;
 
 import edu.kirkwood.dao.*;
+import edu.kirkwood.dao.json.JsonMovieDAO;
+import edu.kirkwood.dao.xml.XmlMovieDAO;
 
 import java.util.List;
 

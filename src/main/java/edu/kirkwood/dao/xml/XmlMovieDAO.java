@@ -1,6 +1,6 @@
-package edu.kirkwood.dao;
+package edu.kirkwood.dao.xml;
 
-import edu.kirkwood.model.Movie;
+import edu.kirkwood.dao.MovieDAO;
 import edu.kirkwood.model.xml.MovieSearchResult;
 import edu.kirkwood.model.xml.OmdbMovieResponse;
 import jakarta.xml.bind.JAXBContext;
@@ -8,7 +8,6 @@ import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
 
 import java.io.StringReader;
-import java.io.UncheckedIOException;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
